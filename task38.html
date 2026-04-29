@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" cotent="width=device-width, inital=scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body><br/>
+
+<div class="w3-container">
+  <div class="w3-card-4 w3-padding-large w3-white w3-round-large" style="max-width:600px; margin:auto;">
+    <h2 class="w3-center"><b>create Account</b></h2>
+
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <input class="w3-input w3-border w3-round w3-light-grey" id="fname" type="text" placeholder="First Name">
+      </div>
+      <div class="w3-half">
+        <input class="w3-input w3-border w3-round w3-light-grey" id="lname" type="text" placeholder="Last Name">
+      </div>
+    </div>
+
+    <div class="w3-row-padding" style="margin-top:15px">
+      <div class="w3-col">
+        <input class="w3-input w3-border w3-round w3-light-grey" id="negara" type="text" placeholder="Country">
+      </div>
+    </div>
+
+    <div class="w3-row-padding" style="margin-top:15px">
+      <div class="w3-half">
+      <input class="w3-input w3-border w3-round w3-light-grey" id="imel" type="text" placeholder="Email Address">
+      </div>
+      <div class="w3-half">
+        <input class="w3-input w3-border w3-round w3-light-grey" id="hape" type="text" placeholder="Phone Number">
+      </div>
+    </div>
+
+    <div class="w3-row-padding" style="margin-top:15px">
+      <div class="w3-half">
+      <input class="w3-input w3-border w3-round w3-light-grey" id="pass" type="password" placeholder="Password">
+      </div>
+      <div class="w3-half">
+      <input class="w3-input w3-border w3-round w3-light-grey" id="cpass" type="password" placeholder="Confirm Password">
+      </div>
+    </div>
+
+    <div class="w3-row-padding" style="margin-top:15px">
+      <input class="w3-check" id="syarat" type="checkbox">
+      <label>Terms and Condition</label>
+    </div>
+
+    <div class="w3-center" style="margin-top:30px; margin-bottom:10px;">
+      <button class="w3-button w3-blue w3-round" style="width:30%" onclick="bikin_akun()">Create</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="w3-container" style="max-width:600px; margin:auto; margin-top:20px;">
+  <p id="hasil_tampil"></p>
+</div>
+
+<script>
+function bikin_akun() {
+  var nama_depan = document.getElementById("fname").value;
+  var nama_belakang = document.getElementById("lname").value;
+  var country = document.getElementById("negara").value;
+  var email = document.getElementById("imel").value;
+  var phone = document.getElementById("hape").value;
+  var paswod = document.getElementById("pass").value;
+  var konfirm = document.getElementById("cpass").value;
+
+  var cek_syarat = document.getElementById("syarat").checked;
+  var status_syarat = "Belum diceklis";
+  if(cek_syarat == true){
+  status_syarat = "Sudah diceklis";
+  }
+  var ket_paswod = "";
+  if(paswod == konfirm){
+      ket_paswod = "sama";
+  }else{
+  ket_paswod = "TIDAK sama";
+  }
+  var cetak = "Isian Form User:<br>" +
+              "- First Name : " + nama_depan + "<br>" +
+              "- Last Name : " + nama_belakang + "<br>" +
+              "- Country : " + country + "<br>" +
+              "- Email : " + email + "<br>" +
+              "- Phone : " + phone + "<br>" +
+              "- Terms : " + status_syarat + "<br><br>" +
+              "<b>Keterangan : Password " + ket_paswod + " dengan Confirm Password</b>";
+
+  document.getElementById("hasil_tampil").innerHTML = cetak;
+}
+</script>
+
+</body>
+</html>

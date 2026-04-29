@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript</title>
+</head>
+<body>
+    <script type="text/javascript">
+        for (var counter = 1; counter <= 3; counter++) {
+            var nama_pokemon = prompt('Masukkan nama ' + counter + ':');
+            var cek_pokemon = nama_pokemon.toLowerCase();
+
+            if (cek_pokemon === 'pikacu' || cek_pokemon === 'raicu' || cek_pokemon === 'elekid') {
+                console.log(nama_pokemon + 'pokemon tipe listrik');
+            }
+            else if (cek_pokemon === 'squirtle' || cek_pokemon === 'lapras' || cek_pokemon === 'greninja') {
+                console.log(nama_pokemon + 'pokemon tipe air');
+            }
+            else {
+                console.log(nama_pokemon + 'tipe pokemon tidak ditemukan');
+            }
+        }
+    </script>
+</body>
+</html>

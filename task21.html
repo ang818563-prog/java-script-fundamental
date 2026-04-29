@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Pokemon List</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var list_electric = 'list of listrik: ';
+        var list_water = 'list of water: ';
+
+        for(var counter = 1; counter <= 3; counter++){
+            var nama_pokemon = prompt('masukkan nama pokemon' + counter + ':');
+            var cek_pokemon = nama_pokemon.toLowerCase();
+
+            if(cek_pokemon === 'pikacu' || cek_pokemon === 'raicu' || cek_pokemon === 'elekid'){
+                list_electric += cek_pokemon + ', ';
+            } 
+            else if(cek_pokemon === 'squirtle' || cek_pokemon === 'lapras' || cek_pokemon === 'greninja'){
+                list_water += cek_pokemon + ', ';
+                
+            }
+        }
+        console.log(list_electric);
+        console.log(list_water);
+    </script>
+</body>
+</html>
